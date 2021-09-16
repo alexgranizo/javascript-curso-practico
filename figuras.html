@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <title>Figuras Geométricas | Curso práctico de javascript</title>
-</head>
-<body>
-    <h1>Figuras Geométricas</h1>
+  </head>
+  <body>
+    <header>
+      <h1>Figuras Geométricas</h1>
+      <p>Este es el primer taller del curso práctico de JS</p>
+    </header>
+    <section>
+      <h2>¿Qué deseas calcular?</h2>
+      <div>
+        <div>Área</div>
+        <div>Perímetro</div>
+      </div>
+    </section>
+    <section>
+      <h2>¿El <span></span> de qué figura deseas calcular?</h2>
+      <div>
+        <div>Triángulo</div>
+        <div>Cuadrado</div>
+        <div>Círculo</div>
+        <div>Rectángulo</div>
+      </div>
+    </section>
+    <section>
+      <h2>Calcula el área y perímetro de un cuadrado</h2>
+      <form>
+        <label for="inputCuadrado">
+          Escribe cuánto mide cada lado de tu cuadrado:
+        </label>
+        <input type="number" id="inputCuadrado" />
+        <button type="button" onclick="calcularPerimetroCuadrado()">
+          Calcular el perímetro
+        </button>
+        <button type="button" onclick="calcularPerimetroCuadrado()">
+          Carcular el área
+        </button>
+      </form>
+    </section>
     <script src="./figuras.js"></script>
-</body>
+  </body>
 </html>
