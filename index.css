@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 body {
   background-color: #d6e4ff;
@@ -13,4 +14,107 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+button {
+  padding: 10px 20px;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 4px;
+  font-size: 18px;
+}
+.none {
+  display: none !important;
+}
+.dimension {
+  height: 300px;
+  width: 45%;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 15px;
+  background-color: #eef4ff;
+  margin: 0 auto;
+}
+.dimension > h2 {
+  height: 60px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.dimension > form {
+  height: 80%;
+  width: 100%;
+  display: flex;
+}
+.dimension form button {
+  width: 50%;
+  margin: 20px;
+}
+.dimension form button:hover {
+  background-color: white;
+}
+
+/* NUEVA SECCIÓN DE FIGURAS  */
+
+.figuras {
+  height: 400px;
+  width: 45%;
+  display: block;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 15px;
+  background-color: #eef4ff;
+  margin: 0 auto;
+}
+.figuras > h2 {
+  height: 60px;
+  background-color: blue;
+  display: block;
+  text-align: center;
+  padding-top: 2%;
+  color: white;
+}
+.figuras > form {
+  height: 300px;
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.figuras > form > button:hover {
+  background-color: white;
+}
+
+/* SECCION DE INPUT  */
+
+.input-form {
+  height: 300px;
+  width: 45%;
+  display: block;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 15px;
+  background-color: #eef4ff;
+  margin: 0 auto;
+}
+.input-form > h2 {
+  height: 60px;
+  background-color: blue;
+  display: block;
+  text-align: center;
+  padding-top: 2%;
+  color: white;
+}
+.input-form > form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+.input-form > form > button {
+  margin: 20px 0 0 10px;
 }

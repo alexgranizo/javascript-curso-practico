@@ -1,3 +1,38 @@
+// Dimensiones
+
+console.group("Investigacion");
+
+let alexander = document.getElementById("perimeter");
+console.log(alexander);
+
+console.groupEnd();
+
+function getDimension(dimension) {
+  let word = document.getElementById("word_dimension");
+  if (dimension == "área") {
+    let area = document.getElementById("dimension");
+    area.classList.add("none");
+    console.log(area);
+  } else if (dimension == "perímetro") {
+    let area = document.getElementById("dimension");
+    area.classList.add("none");
+  }
+
+  word.innerHTML = dimension;
+  return dimension;
+}
+
+// Figuras geométricas
+
+function getFigure(figure) {
+  let word = document.getElementById("word_figure");
+  word.innerHTML = figure;
+  let disableElement = document.getElementById("figuras");
+  disableElement.classList.add("none");
+  console.log(disableElement);
+  return figure;
+}
+
 // cuadrado
 console.group("Cuadrado");
 // const ladoCuadrado = 5;
