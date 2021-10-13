@@ -24,9 +24,7 @@ button {
   border-radius: 4px;
   font-size: 18px;
 }
-.none {
-  display: none !important;
-}
+
 .dimension {
   height: 300px;
   width: 45%;
@@ -61,7 +59,7 @@ button {
 .figuras {
   height: 400px;
   width: 45%;
-  display: block;
+  display: none;
   border: 1px solid rgb(190, 190, 190);
   border-radius: 15px;
   background-color: #eef4ff;
@@ -93,14 +91,14 @@ button {
 .input-form {
   height: 300px;
   width: 45%;
-  display: block;
+  display: none;
   border: 1px solid rgb(190, 190, 190);
   border-radius: 15px;
   background-color: #eef4ff;
   margin: 0 auto;
 }
 .input-form > h2 {
-  height: 60px;
+  height: auto;
   background-color: blue;
   display: block;
   text-align: center;
@@ -117,4 +115,20 @@ button {
 }
 .input-form > form > button {
   margin: 20px 0 0 10px;
+}
+
+#formSquarePerimeter {
+  display: none;
+}
+#formSquareArea {
+  display: none;
+}
+#formTriangleArea {
+  display: none;
+}
+#formTrianglePerimeter {
+  display: none;
+}
+#formCircleArea {
+  display: none;
 }

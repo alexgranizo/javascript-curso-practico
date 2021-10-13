@@ -1,48 +1,78 @@
 // Dimensiones
-
-console.group("Investigacion");
-
-let alexander = document.getElementById("perimeter");
-console.log(alexander);
-
-console.groupEnd();
-
+let dimensionGlobal;
+let figuraGlobal;
 function getDimension(dimension) {
-  let word = document.getElementById("word_dimension");
   if (dimension == "área") {
-    let area = document.getElementById("dimension");
-    area.classList.add("none");
-    console.log(area);
+    dimensionGlobal = "área";
   } else if (dimension == "perímetro") {
-    let area = document.getElementById("dimension");
-    area.classList.add("none");
+    dimensionGlobal = "perímetro";
   }
+  let word = document.getElementById("word_dimension");
+
+  let area = document.getElementById("dimension");
+  let figura = document.getElementById("figuras");
+  area.style.display = "none";
+  figura.style.setProperty("display", "block");
 
   word.innerHTML = dimension;
+
   return dimension;
 }
 
-// Figuras geométricas
-
 function getFigure(figure) {
   let word = document.getElementById("word_figure");
+  let word_two = document.getElementById("word_dimension1");
+  let input = document.getElementById("input-figure");
+  let figuras = document.getElementById("figuras");
+  figuras.style.setProperty("display", "none");
+  input.style.setProperty("display", "block");
+  figuraGlobal = figure;
   word.innerHTML = figure;
-  let disableElement = document.getElementById("figuras");
-  disableElement.classList.add("none");
-  console.log(disableElement);
+  word_two.textContent = dimensionGlobal;
+  formValidation(figuraGlobal, dimensionGlobal);
   return figure;
 }
 
+// Validación de forms
+
+function formValidation(figure, dimension) {
+  if (figure == "Cuadrado" && dimension == "área") {
+    let formSquare = document.getElementById("formSquareArea");
+    formSquare.style.setProperty("display", "block");
+  } else if (figure == "Cuadrado" && dimension == "perímetro") {
+    let formSquare = document.getElementById("formSquarePerimeter");
+    formSquare.style.setProperty("display", "block");
+  } else if (figure == "Triángulo" && dimension == "área") {
+    let formTriangle = document.getElementById("formTriangleArea");
+    formTriangle.style.setProperty("display", "block");
+  } else if (figure == "Triángulo" && dimension == "perímetro") {
+    let formTriangle = document.getElementById("formTrianglePerimeter");
+    formTriangle.style.setProperty("display", "block");
+  } else if (figure == "Circulo" && dimension == "área") {
+    let formCircle = document.getElementById("formCircleArea");
+    formCircle.style.setProperty("display", "block");
+  }
+  // switch (figure) {
+  //   case "Cuadrado":
+  //     let formSquare = document.getElementById("formSquare");
+  //     formSquare.style.setProperty("display", "block");
+  //     break;
+  //   case "Triángulo":
+  //     let formTriangle = document.getElementById("formTriangle");
+  //     formTriangle.style.setProperty("display", "block");
+  //     break;
+  //   case "Círculo":
+  //     let formCircle = document.getElementById("formCircle");
+  //     formCircle.style.setProperty("display", "block");
+  //     break;
+  //   case "Rectángulo":
+  //     let formRectangle = document.getElementById("formRectangle");
+  //     formRectangle.style.setProperty("display", "block");
+  //     break;
+  // }
+}
+
 // cuadrado
-console.group("Cuadrado");
-// const ladoCuadrado = 5;
-// console.log("Los lados del cuadrado miden: " + ladoCuadrado + " cm");
-
-// const perimetroCuadrado = ladoCuadrado * 4;
-// console.log("El perímetro del cuadrado mide: " + perimetroCuadrado + " cm");
-
-// const areaCuadrado = ladoCuadrado * ladoCuadrado;
-// console.log("El area del cuadrado es: " + areaCuadrado + " cm²");
 
 function perimetroCuadrado(lado) {
   return lado * 4;
@@ -50,8 +80,6 @@ function perimetroCuadrado(lado) {
 function areaCuadrado(lado) {
   return lado * lado;
 }
-
-console.groupEnd();
 
 // triangulo
 console.group("Triángulo");
@@ -115,10 +143,48 @@ function areaCirculo(radioCirculo) {
 
 console.groupEnd();
 
+//OPERACIONES
 function calcularPerimetroCuadrado() {
-  const input = document.getElementById("inputCuadrado");
+  const input = document.getElementById("inputCuadradoPerimetro");
   const value = input.value;
 
   const perimetro = perimetroCuadrado(value);
   alert(perimetro);
+}
+function calcularAreaCuadrado() {
+  const input = document.getElementById("inputCuadradoArea");
+  const value = input.value;
+
+  const area = areaCuadrado(value);
+  alert(area);
+}
+function calcularAreaTriángulo() {
+  const input_one = document.getElementById("inputTrianguloBase");
+  const input_two = document.getElementById("inputTrianguloAltura");
+  const value_one = input_one.value;
+  const value_two = input_two.value;
+
+  const area = areaTriangulo(value_one, value_two);
+  alert(area);
+}
+function calcularPerimetroTriángulo() {
+  const input_base = document.getElementById("inputTrianguloBasePerimetro");
+  const input_lado_uno = document.getElementById("inputTrianguloLadoUno");
+  const input_lado_dos = document.getElementById("inputTrianguloLadoDos");
+  const value_base = parseInt(input_base.value);
+  const value_lado_uno = parseInt(input_lado_uno.value);
+  const value_lado_dos = parseInt(input_lado_dos.value);
+  const perimetro = perimetroTriangulo(
+    value_lado_uno,
+    value_lado_dos,
+    value_base
+  );
+  alert(perimetro);
+}
+function calcularAreaCirculo() {
+  const input_radio = document.getElementById("inputCirculoRadio");
+  const value = input_radio.value;
+
+  const area = areaCirculo(value);
+  alert(area);
 }
