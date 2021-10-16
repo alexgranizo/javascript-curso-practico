@@ -6,6 +6,8 @@ function getDimension(dimension) {
     dimensionGlobal = "área";
   } else if (dimension == "perímetro") {
     dimensionGlobal = "perímetro";
+  } else if (dimension == "altura") {
+    dimensionGlobal = "altura";
   }
   let word = document.getElementById("word_dimension");
 
@@ -51,6 +53,9 @@ function formValidation(figure, dimension) {
   } else if (figure == "Circulo" && dimension == "área") {
     let formCircle = document.getElementById("formCircleArea");
     formCircle.style.setProperty("display", "block");
+  } else if (figure == "Triángulo" && dimension == "altura") {
+    let formTriangleHeight = document.getElementById("formTriangleHeight");
+    formTriangleHeight.style.setProperty("display", "block");
   }
   // switch (figure) {
   //   case "Cuadrado":
@@ -187,4 +192,19 @@ function calcularAreaCirculo() {
 
   const area = areaCirculo(value);
   alert(area);
+}
+function calcularAlturaTriangulo() {
+  const input_base = document.getElementById("inputTrianguloBaseAltura");
+  const lado1 = document.getElementById("inputTrianguloLadoUnoAltura");
+  const lado2 = document.getElementById("inputTrianguloLadoDosAltura");
+  const value1 = input_base.value;
+  const value2 = lado1.value;
+  const value3 = lado2.value;
+
+  if (value2 === value3 && value2 != value1) {
+    const calculo = Math.sqrt(value2 * value2 - (value1 * value1) / 4);
+    alert(calculo);
+  } else {
+    alert("No es un triangulo isoseles");
+  }
 }

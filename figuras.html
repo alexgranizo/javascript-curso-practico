@@ -35,6 +35,13 @@
         >
           Perímetro
         </button>
+        <button
+          onclick="getDimension('altura')"
+          type="button"
+          class="button-height"
+        >
+          Altura
+        </button>
       </form>
     </section>
     <section class="figuras" id="figuras">
@@ -120,6 +127,7 @@
           Calcular!
         </button>
       </form>
+
       <form id="formTrianglePerimeter">
         <label for="inputTrianguloBasePerimetro">
           Escribe la base del triángulo en cm:
@@ -136,6 +144,27 @@
         <button
           type="button"
           onclick="calcularPerimetroTriángulo()"
+          class="button-calc"
+        >
+          Calcular!
+        </button>
+      </form>
+      <form id="formTriangleHeight">
+        <label for="inputTrianguloBasePerimetro">
+          Escribe la base del triángulo en cm:
+        </label>
+        <input type="number" id="inputTrianguloBaseAltura" />
+        <label for="inputTrianguloLadoUno">
+          Escribe el lado 1 del triángulo en cm:
+        </label>
+        <input type="number" id="inputTrianguloLadoUnoAltura" />
+        <label for="inputTrianguloLadoDos">
+          Escribe el lado 2 del triángulo en cm:
+        </label>
+        <input type="number" id="inputTrianguloLadoDosAltura" />
+        <button
+          type="button"
+          onclick="calcularAlturaTriangulo()"
           class="button-calc"
         >
           Calcular!
