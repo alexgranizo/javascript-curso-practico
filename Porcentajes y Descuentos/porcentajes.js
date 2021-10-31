@@ -1,7 +1,3 @@
-const precioOriginal = 120;
-
-const descuento = 18;
-
 function calcularPrecioConDescuento(precio, descuento) {
   const porcentajePrecioConDescuento = 100 - descuento;
 
@@ -10,44 +6,40 @@ function calcularPrecioConDescuento(precio, descuento) {
   return precioConDescuento;
 }
 
-function couponValidate(descuento) {
+function couponValidate(priceValue, descuento) {
+  let cupones = ["NEWCUSTOMER2021", "NOVIEMBRE2021"];
   const coupon = document.getElementById("coupon");
   const couponValue = coupon.value;
   switch (couponValue) {
     case cupones[0]:
-      descuento = descuento + 20;
+      var nuevoDescuento = descuento + 20;
       break;
     case cupones[1]:
-      descuento = descuento + 40;
+      var nuevoDescuento = descuento + 40;
       break;
   }
-  return descuento;
+  console.log(descuento);
+  const precioConDescuento = calcularPrecioConDescuento(
+    priceValue,
+    nuevoDescuento
+  );
+  return precioConDescuento;
 }
 
 function onClickButtonPriceDescount() {
-  let cupones = ["NEWCUSTOMER2021", "NOVIEMBRE2021"];
-
   const inputPrice = document.getElementById("inputPrice");
   const inputDescount = document.getElementById("inputDescount");
   const priceValue = inputPrice.value;
-  let descountValue = inputDescount.value;
-  const coupon = document.getElementById("coupon");
-  let couponValue = coupon.value;
-  switch (couponValue) {
-    case cupones[0]:
-      descountValue = descountValue + 20;
-      break;
-    case cupones[1]:
-      descountValue = descountValue + 40;
-      break;
-  }
+  let descountValue = parseInt(inputDescount.value);
 
-  const precioConDescuento = calcularPrecioConDescuento(
-    priceValue,
-    descountValue
-  );
+  let descuento = couponValidate(priceValue, descountValue);
+
+  // const precioConDescuento = calcularPrecioConDescuento(
+  //   priceValue,
+  //   descountValue
+  // );
   const paragraph = document.getElementById("resultado");
-  return (paragraph.innerText = `El precio con descuento es ${precioConDescuento}`);
+  return (paragraph.innerText = `El precio con descuento es ${descuento}`);
 }
 
 // console.log({
